@@ -4,14 +4,24 @@
 <h3 class="pink-text text-darken-2 center-align">Add Review</h3>
 
 <div class="row card-panel grey lighten-5">
-    <form class="col s12" method="POST" action="">
+    <form class="col s12" method="POST" action="{{ url_for('add_review') }}">
+        <!-- book title -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-book prefix pink-text text-darken-3"></i>
-                <input id="book_name" name="book_name" minlength="5" maxlength="150" type="text" class="validate" required>
+                <input id="book_name" name="book_name" minlength="1" maxlength="150" type="text" class="validate" required>
                 <label for="book_name">Book Title</label>
             </div>
         </div>
+        <!-- author name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-feather-pointed prefix pink-text text-darken-3"></i>
+                <input id="author_name" name="author_name" minlength="5" maxlength="150" type="text" class="validate" required>
+                <label for="author_name">Author</label>
+            </div>
+        </div>
+        <!-- genre selection -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-filter prefix pink-text text-darken-3"></i>
@@ -24,6 +34,7 @@
                 <label for="genre_name">Genre</label>
             </div>
         </div>
+        <!-- review title -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-pen prefix pink-text text-darken-3"></i>
@@ -31,6 +42,7 @@
                 <label for="review_name">Review Title</label>
             </div>
         </div>
+        <!-- review -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-align-left prefix pink-text text-darken-3"></i>
@@ -38,11 +50,20 @@
                 <label for="review_description">Review</label>
             </div>
         </div>
+        <!-- review publish date -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-calendar-alt prefix pink-text text-darken-3"></i>
                 <input id="publish_date" name="publish_date" type="text" class="datepicker validate">
                 <label for="publish_date">Publish Date</label>
+            </div>
+        </div>
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large pink darken-2 text-shadow">
+                    Add Review <i class="fas fa-plus-square right"></i>
+                </button>
             </div>
         </div>
     </form>
